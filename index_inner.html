@@ -2,6 +2,7 @@
 <html>
     <head>
         <script>
+            window['_fs_is_outer_script'] = true;
             window['_fs_debug'] = true;
             window['_fs_host'] = 'fullstory.com';
             window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
@@ -27,7 +28,10 @@
     </head>
     <body>
         <button onclick="
-            FS.event('Custom Event',{timestamp_date:new Date()});
+            FS.event('Custom Event',{
+                'timestamp_date':new Date(),
+                'fs_is_outer_script':true
+                });
             console.log('Custom Event');
         ">Custom Event</button>
     </body>
